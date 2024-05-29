@@ -2,15 +2,16 @@ import { Flex } from "@chakra-ui/react"
 import { FC } from "react"
 import TodoCard from "./TodoCard";
 
+interface TodoList {
+    todos : ITodo[]
+}
 
-const TodoList: FC = () => {
+const TodoList: FC<TodoList> = ({todos}) => {
     return (
         <Flex bgColor="" flexGrow={1} flexDir="column" alignItems="center" pt={8}>
-            <TodoCard/>
-            <TodoCard/>
-            <TodoCard/>
-            <TodoCard/>
-            <TodoCard/>
+            {todos.map((v) => (
+            <TodoCard key={v.id} todo={v}/>
+            ))}
         </Flex>
     );
 };
