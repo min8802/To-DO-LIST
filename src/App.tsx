@@ -23,7 +23,7 @@ const sampleData: ITodo[] = [
 ];
 
 const App: FC = () => {
-  const [todos, setTodos] = useState<ITodo[]>(sampleData);
+  const [todos, setTodos] = useState<ITodo[]>([]);
   
 
   return <Flex flexDir="column" minH="100vh">
