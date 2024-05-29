@@ -3,12 +3,12 @@ import { FC } from "react";
 import { FaTrashCanArrowUp } from "react-icons/fa6";
 import { FaRegEdit } from "react-icons/fa";
 
-interface TodoCard {
+interface TodoCardProps {
     todo: ITodo
 }
 
 
-const TodoCard: FC<TodoCard> = ({ todo }) => {
+const TodoCard: FC<TodoCardProps> = ({ todo }) => {
 
     
     return (

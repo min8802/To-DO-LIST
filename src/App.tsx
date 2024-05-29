@@ -19,9 +19,10 @@ const sampleData: ITodo[] = [
 
 const App: FC = () => {
   const [todos, setTodos] = useState<ITodo[]>(sampleData);
-
+  
+  
   return <Flex flexDir="column" minH="100vh">
-    <CreateTodo/>
+    <CreateTodo todos={todos} setTodos={setTodos}/>
     <TodoList todos={todos}/>
   </Flex>;
 };
