@@ -10,7 +10,7 @@ interface CreateTodoProps {
 const CreateTodo: FC<CreateTodoProps> = ({ todos, setTodos }) => {
 
     const [currentTodoId, setCurrentTodoId] = useState<number>(
-        todos[todos.length - 1].id
+        todos[todos.length - 1]?.id
       );
     const [content, setContent] = useState<string>("");
 
@@ -28,7 +28,7 @@ const CreateTodo: FC<CreateTodoProps> = ({ todos, setTodos }) => {
 
     return (
         <Flex bgColor="teal.200" h={32} justifyContent="center" alignItems="center" px={8} gap={4}>
-            <Input value={content} onChange={(e) => setContent(e.target.value)}/>
+            <Input maxW={250} value={content} onChange={(e) => setContent(e.target.value)}/>
             <Button colorScheme="blue" onClick={onClickCreateTodo}>만들기</Button>
         </Flex>
     );
